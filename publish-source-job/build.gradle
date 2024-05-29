@@ -21,6 +21,30 @@ ext {
 }
 
 dependencies {
+    constraints {
+        implementation('io.netty:netty-handler:4.1.94.Final') {
+            because 'CVE-2023-34462'
+        }
+        checkstyle('commons-beanutils:commons-beanutils:1.9.4') {
+            because 'CVE-2019-10086'
+        }
+        implementation('org.apache.zookeeper:zookeeper:3.4.14') {
+            because 'CVE-2019-0201'
+        }
+        implementation('io.netty:netty-codec-http:4.1.108.Final') {
+            because 'CVE-2024-29025'
+        }
+        implementation('org.xerial.snappy:snappy-java:1.1.10.4') {
+            because 'CVE-2023-43642'
+        }
+        implementation('com.fasterxml.jackson.core:jackson-databind:2.10.5.1') {
+            because 'CVE-2020-25649'
+        }
+        implementation('io.netty:netty:3.7.1.Final') {
+            because 'CVE-2014-0193'
+        }
+    }
+
     implementation "io.mantisrx:mantis-runtime:$mantisVersion"
     implementation "io.mantisrx:mantis-publish-netty:$mantisPublishVersion"
     implementation "io.mantisrx:mantis-connector-publish:$mantisConnectorsVersion"
